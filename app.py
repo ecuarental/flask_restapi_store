@@ -10,7 +10,7 @@ from security import authenticate, identity
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///www.designworkstudio.org/designwo_flaskstoreapi'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///designwo_user:Asdf1234@designworkstudio.org/designwo_flaskstoreapi'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.secret_key = 'jose'
