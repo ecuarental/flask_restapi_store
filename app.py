@@ -47,9 +47,10 @@ if __name__ == '__main__':
     from db import db  # noqa
     db.init_app(app)
 
-    @app.before_first_request
-    def create_tables():
-        """Create tables in the db."""
-        db.create_all()
+
+    # @app.before_first_request
+    # def create_tables():
+    #     """Create tables in the db."""
+    #     db.create_all()
     
     app.run()  # important to mention debug=True
