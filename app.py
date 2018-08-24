@@ -32,6 +32,10 @@ api.add_resource(Store, '/store/<string:name>')
 api.add_resource(StoreList, '/stores')
 api.add_resource(UserRegister, '/register')
 
+@app.route('/')
+def home():
+    return 'Hello world!'
+
 
 if __name__ == '__main__':
     from db import db  # noqa
