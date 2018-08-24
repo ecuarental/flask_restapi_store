@@ -10,7 +10,14 @@ from security import authenticate, identity
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///designwo_user:Asdf1234@designworkstudio.org/designwo_flaskstoreapi'
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://{}:{}@{}/{}?host={}?port={}".format(
+        "designwo_user",
+        "Asdf1234",
+        "127.0.0.1",
+        "designwo_flaskstoreapi",
+        "www.designworkstudio.org",
+        "3306")
+# mysql+pymysql://sylvain:passwd@localhost/db?host=localhost?port=3306
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.secret_key = 'jose'
@@ -40,4 +47,4 @@ def home():
 if __name__ == '__main__':
     from db import db  # noqa
     db.init_app(app)
-    app.run()  # important to mention debug=True
+    app.run(port=5000, debug=True)  # important to mention debug=True

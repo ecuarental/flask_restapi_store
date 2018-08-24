@@ -12,6 +12,9 @@ jedi = "*"
 "flake8" = "*"
 "flake8-docstrings" = "*"
 sqlalchemy = "*"
+"psycopg2" = "*"
+mysqlclient = "*"
+pymysql = "*"
 
 [dev-packages]
 pylint = "*"
