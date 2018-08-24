@@ -10,7 +10,7 @@ from security import authenticate, identity
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///www.designworkstudio.org/designwo_flaskstoreapi'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///www.designworkstudio.org/designwo_flaskstoreapi'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.secret_key = 'jose'
@@ -36,4 +36,4 @@ api.add_resource(UserRegister, '/register')
 if __name__ == '__main__':
     from db import db  # noqa
     db.init_app(app)
-    app.run(port=5000, debug=True)  # important to mention debug=True
+    app.run()  # important to mention debug=True
